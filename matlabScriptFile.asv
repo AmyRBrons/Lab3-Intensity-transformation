@@ -64,7 +64,103 @@ f = imread('assets/breastXray.tif');
 %subplot(1,3,1); imhist(f);
 %subplot(1,3,2); imhist(g);
 %subplot(1,3,3); imhist(h);
-clear all
-close all
-f = imread('assets/noisyPCB.jpg');
-imshow(f)
+% clear all
+% close all
+% f = imread('assets/noisyPCB.jpg');
+% imshow(f)
+
+% w_box = fspecial('average', [9 9])
+% w_gauss = fspecial('Gaussian', [7 7], 1.0)
+% 
+% g_box = imfilter(f, w_box, 0);
+% g_gauss = imfilter(f, w_gauss, 0);
+% figure
+% montage({f, g_box, g_gauss})
+% 
+% %w_box = fspecial('average', [5 5])
+% w_gauss = fspecial('Gaussian', [7 7], 1.0)
+% e_gauss = fspecial('Gaussian', [7 7], 2.0)
+% r_gauss = fspecial('Gaussian', [7 7], 6.0)
+% t_gauss = fspecial('Gaussian', [7 7], 7.0)
+% 
+% %g_box = imfilter(f, w_box, 0);
+% g_gauss = imfilter(f, w_gauss, 0);
+% h_gauss = imfilter(f, e_gauss, 0);
+% j_gauss = imfilter(f, r_gauss, 0);
+% k_gauss = imfilter(f, t_gauss, 0);
+% figure
+% montage({g_gauss, h_gauss, j_gauss, k_gauss})
+
+% g_median = medfilt2(f, [7 7], 'zero');
+% figure; montage({f, g_median})
+
+% f = imread('assets/moon.tif');
+% w_box = fspecial('average', [1 1])
+% w_disk = fspecial("disk",0.5)
+% w_lap = fspecial("laplacian", 0.1)
+% w_gauss = fspecial('Gaussian', [1 1], 1.0)
+% w_log = fspecial("log", [1000 1000], 0.5)
+% w_motion = fspecial("motion", 2, 0)
+% w_prew = fspecial("prewitt")
+% w_sobel = fspecial("sobel")
+% w_unsharp = fspecial("unsharp", 0.2)
+% 
+% 
+% g_box = imfilter(f, w_box, 0);
+% g_disk = imfilter(f,w_box,0);
+% g_lap = imfilter(f, w_lap,0);
+% g_gauss = imfilter(f, w_gauss, 0);
+% g_log = imfilter(f, w_log, 0);
+% g_motion = imfilter(f, w_motion, 0);
+% g_prew = imfilter(f, w_prew, 0);
+% g_sobel = imfilter(f, w_sobel, 0);
+% g_unsharp = imfilter(f, w_unsharp,0);
+% 
+% figure
+% montage({f, g_box, g_disk, g_lap, g_gauss, g_log, g_motion, g_prew, g_sobel, g_unsharp})
+% 
+% f = imread('assets/moon.tif');
+% w_box = fspecial('average', [1 1])
+% w_disk = fspecial("disk",0.2)
+% w_gauss = fspecial('Gaussian', [1 1], 0.5)
+% 
+% g_box = imfilter(f, w_box, 0);
+% g_disk = imfilter(f,w_box,0);
+% g_gauss = imfilter(f, w_gauss, 0);
+% 
+% figure
+% montage({f, g_box, g_disk, g_gauss})
+
+% f = imread("assets/lake&tree.png")
+% imshow(f)
+% 
+% g=imadjust(f,[0.15 0.45]);
+% montage({f, g})     
+% 
+% r = double(g);  
+% k = mean2(r);  
+% E = 2;
+% s = 1 ./ (1.0 + (k ./ (r + eps)) .^ E);
+% h = uint8(255*s);
+% imshowpair(g, h, "montage")
+
+% f= imread("assets/circles.tif")
+% w_sobel = fspecial("sobel")
+% g_sobel = imfilter(f, w_sobel, 0);
+% w_prew = fspecial("prewitt")
+% g_prew = imfilter(g_sobel,w_prew,0);
+% montage({f,g_sobel, g_prew})
+
+f = imread("assets/office.jpg")
+g=imadjust(f,[0.3 0.55]);
+
+r = double(g);  
+k = mean2(r);  
+E = 1;
+s = 1 ./ (1.0 + (k ./ (r + eps)) .^ E);
+h = uint8(255*s);
+
+w_gauss 
+g_gauss = imfilter(f, w_gauss, 0);
+
+montage({f, g, h}) 
