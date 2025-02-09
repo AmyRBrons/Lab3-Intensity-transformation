@@ -17,8 +17,8 @@ imshow(f)
 ```
 
 Output
-<p align = "center"><img src="assets/task1.png"/></p><BR>
-
+<p align = "center"><img src="assets/task1.png" style="width: 250px"/></p><BR>
+<BR><BR>
 Check the dimension of _f_ on the right window pane of Matlab. Examine the image data stored:
 
 Input
@@ -28,9 +28,9 @@ imshow(f(1:241,:))
 ```
 
 Output
-<p align = "center"><img src = "assets/halfbreast.png"/></p><BR>
+<p align = "center"><img src = "assets/halfbreast.png" style="width: 250px"/></p><BR>
 
-
+<BR><BR>
 To find the maximum and minimum intensity values of the image, do this:
 Input
 ```
@@ -52,17 +52,20 @@ fmax =
 
    255
 ```
-
+<BR><BR>
 Since the data type for _f_ is _uint8_, the full intensity range is [0 255].  Is the intensity of _f_ close to the full range?:
 Yes-- the fmax is the max intensity given that 255 is the value.
+<BR><BR>
 
-**Test yourself**: Display the right half of the image. Capture it for your logbook.
+## Test yourself
+Display the right half of the image:
 Input
 ```
 imshow(f(:,241:482))
 ```
 Output
-<p align="centre"><img src ="assets/testYS.png"/></p><BR>
+<p align="centre"><img src ="assets/testYS.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 ### Negative image
 
@@ -76,7 +79,8 @@ imshowpair(f, g1, 'montage')
 ```
 
 Output
-<p align="centre"><img src = "assets/task1.1.png"/></p><BR>
+<p align="centre"><img src = "assets/task1.1.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 ### Gamma correction
 
@@ -89,8 +93,8 @@ montage({g2,g3})
 ```
 
 Output
-<p align="center"> <img src="assets/gamma.png" /> </p><BR>
-
+<p align="center"> <img src="assets/gamma.png" style="width: 250px"/> </p><BR>
+<BR><BR>
 
 ## Task 2: Contrast-stretching transformation
 Instead of using the imadjust function, we will apply the constrast stretching transformation function:
@@ -107,17 +111,17 @@ imshowpair(f, g, "montage")
 ```
 
 Output
-<p align="center"><img src ="assets/contrast.png"/></p><BR>
+<p align="center"><img src ="assets/contrast.png" style="width: 250px"/></p><BR>
 
 Discuss the results with your classmates and record your observations in your logbook.
 - Main discussion was about utility for contast-lacking images, or where detail needs highlighted
 - Causes distortion of image slightly and noise on png
 - Causes some areas to be highlighted correctly, and others to be washed away
-
+<BR><BR>
 
 ## Task 3: Contrast Enhancement using Histogram
 
-### PLotting the histogram of an image
+### Plotting the histogram of an image
 Matlab has a built-in function imhist to compute the histogram of an image and plot it:
 
 Input
@@ -129,7 +133,8 @@ imhist(f);
 ```
 
 Output
-<p align="center"><img src="assets/his1.png"/></p><BR>
+<p align="center"><img src="assets/his1.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 One attempt is to stretch the intensity between 0.3 and 0.55 of full scale (i.e. 255) with the built-in function imadjust from the previous tasks:
 
@@ -143,7 +148,9 @@ imhist(g);
 ```
 
 Output
-<p align="center"><img src="assets/his2.png"/></p><BR>
+<p align="center"><img src="assets/his2.png" style="width: 250px"/></p><BR>
+
+<BR><BR>
 
 ### Histogram, PDF and CDF
 The following code computs the PDF and CDF for the adjusted image g, and plot them side-by-side in a single figure. The function subplot(m, n, p) specifies which subplot is to be used:
@@ -160,10 +167,10 @@ plot(g_cdf)
 ```
 
 Output
-<p align ="center"><img src="assets/his3.png"/></p><BR>
+<p align ="center"><img src="assets/his3.png" style="width: 250px"/></p><BR>
 
 ### Histogram Equalization
-he following code replot the CDF and make it looks pretty. It is also an opportunity to demonstrate some of Matlab's plotting capabilities:
+The following code replot the CDF and make it looks pretty. It is also an opportunity to demonstrate some of Matlab's plotting capabilities:
 Input
 ```
 x = linspace(0, 1, 256);    
@@ -178,7 +185,8 @@ title('Transformation function', 'fontsize', 12)
 ```
 
 Output
-<p align = "center"><img src="assets/his4.png"/></p><BR>
+<p align = "center"><img src="assets/his4.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 The Matlab function histeq computes the CDF of an image, and use this as the intensity transformation function to flatten the histogram. The following code will perform this function and provide plots of all three images and their histogram:
 
@@ -195,13 +203,14 @@ subplot(1,3,3); imhist(h);
 
 Output
 
-<p align = "center"><img src ="assets/hismont.png"/></p><BR>
-<p align = "center"><img src = "assets/hisimmont.png"/></p><BR>
+<p align = "center"><img src ="assets/hismont.png" style="width: 250px"/></p><BR>
+<p align = "center"><img src = "assets/hisimmont.png" style="width: 250px"/></p><BR>
 
+<BR><BR>
 
 ## Task 4 - Noise reduction with lowpass filter
 The table below shows the types of kernels that can generated.
-<p align = "center"><img src ="assets/fspecial.jpg"/></p><BR>
+<p align = "center"><img src ="assets/fspecial.jpg" style="width: 250px"/></p><BR>
 
 Import an X-ray image of a printed circuit board:
 Input
@@ -212,7 +221,8 @@ f = imread('assets/noisyPCB.jpg');
 imshow(f)
 ```
 Output
-<p align = "center"><img src = "assets/cb.png"/></p><BR>
+<p align = "center"><img src = "assets/cb.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 Use the function fspecial to produce a 9x9 averaging filter kernel _ and a 7 x 7 Gaussian kernel with sigma = 0.5 as shown below:
 Input
@@ -222,7 +232,7 @@ w_gauss = fspecial('Gaussian', [7 7], 1.0)
 ```
 
 Output
-<p align = "center"><img src="assets/cb2.png"/></p><BR>
+<p align = "center"><img src="assets/cb2.png" style="width: 250px"/></p><BR>
 
 ```
 w_box =
@@ -287,7 +297,7 @@ w_gauss =
     0.0011    0.0002    0.0000
 
 ```
-
+<BR><BR>
 Now, apply the filter to the image with:
 
 Input
@@ -299,20 +309,22 @@ montage({f, g_box, g_gauss})
 ```
 
 Output
-<p align="center"><img src="assets/cbmontage.png"/></p><BR>
+<p align="center"><img src="assets/cbmontage.png" style="width: 250px"/></p><BR>
+<BR><BR>
 
 Comments:
 - Box filter and gaussian both permit a noise reducing pass at the image, however gaussian is much softer
 - Gaussian looks to have a stronger noise reduction
 - Box and original have minimal difference in this state, however contrast and tone look more pronounced 
 - Reducing the gaussian kernel to 1, and the box kernel raised to 25 creates this:
-<p align="center"><img src="assets/kerns1.png"/></p><BR>
+<p align="center"><img src="assets/kerns1.png" style="width: 250px"/></p><BR>
 - Raising the gaussian kernel to 17 and the box kernel to 5 creates this:
-<p align ="center"><img src="assets/kerns2.png"/></p><BR>
+<p align ="center"><img src="assets/kerns2.png" style="width: 250px"/></p><BR>
 - Gaussia kernel at 7, but sigma at values 0.5, 1.0, 3.0, 4.5:
-<p align="center"><img src="assets/kerns3.png"/></p><BR>
+<p align="center"><img src="assets/kerns3.png" style="width: 250px"/></p><BR>
 - It can be seen how (especially in gaussian) the kernel raising creates a softer image, trading off noise reduction for image contrast and clarity
 -The sigma value change has slight differences, but less so then the kernel adjustment
+<BR><BR>
 
 ## Task 5 - Median Filtering
  Median filter provides a better solution if sharpness is to be preserved.
@@ -324,11 +336,13 @@ figure; montage({f, g_median})
 ```
 
 Output
-<p align ="center"><img src="assets/median.png"></p><BR>
+<p align ="center"><img src="assets/median.png" style="width: 250px" ></p><BR>
+<BR><BR>
 
 Comments:
 - Noise reduction traded again for image blur
 - Grain is nearly gone
+<BR><BR>
 
 ## Task 6 - Sharpening the image with Laplacian, Sobel and Unsharp filters
 First, I tested all imspecial filters:
@@ -362,7 +376,7 @@ montage({f, g_box, g_disk, g_lap, g_gauss, g_log, g_motion, g_prew, g_sobel, g_u
 ```
 
 Output 
-<p align = "center"><img src ="assets/imspecialmoons.png"/></p><BR>
+<p align = "center"><img src ="assets/imspecialmoons.png" style="width: 250px"/></p><BR>
 
 Then I noticed the most sharpening potentional (after playing around with values) in gaussian, disk, and box filters. This was my optimal outcomes:
 
@@ -382,11 +396,12 @@ montage({f, g_box, g_disk, g_gauss})
 ```
 
 Output
-<p align = "center"><img src ="assets/sharpmoons.png"/></p><BR>
+<p align = "center"><img src ="assets/sharpmoons.png" style="width: 250px"/></p><BR>
 
 ## Task 7 - Test yourself Challenges
 
-* Improve the contrast of a lake and tree image store in file _lake&tree.png_
+Improve the contrast of a lake and tree image store in file _lake&tree.png_
+<BR>
 Input
 ```
 f = imread("assets/lake&tree.png")
@@ -401,10 +416,13 @@ h = uint8(255*s);
 imwrite(h,"lake&tree.png")
 montage({f,g,h})
 ```
-Output
-<p align ="center"><img src ="assets/lakeandtreemont2.png"/></p><BR>
 
-* Use the Sobel filter in combination with any other techniques, find the edge of the circles in the image file _circles.tif_.
+Output
+<p align ="center"><img src ="assets/lakeandtreemont2.png" style="width: 250px"/></p><BR>
+<BR><BR>
+
+Use the Sobel filter in combination with any other techniques, find the edge of the circles in the image file _circles.tif_.
+<BR>
 Input
 ```
 f= imread("assets/circles.tif")
@@ -416,12 +434,14 @@ montage({f,g_sobel, g_prew})
 ```
 
 Output from just Sobel
-<p align ="center"><img src ="assets/sobel.png"/></p><BR>
+<p align ="center"><img src ="assets/sobel.png" style="width: 250px"/></p><BR>
 
 Output from Sobel + Prewitt
-<p align ="center"><img src ="assets/sobprew.png"/></p><BR>
+<p align ="center"><img src ="assets/sobprew.png" style="width: 250px"/></p><BR>
 
-* _office.jpg_ is a colour photograph taken of an office with bad exposure.  Use whatever means at your disposal to improve the lighting and colour of this photo.
+<BR><BR>
+_office.jpg_ is a colour photograph taken of an office with bad exposure.  Use whatever means at your disposal to improve the lighting and colour of this photo.
+<BR>
 Input
 ```
 f = imread("assets/office.jpg")
@@ -441,4 +461,4 @@ montage({f, g, h, g_box})
 ```
 Output
 The four stages of this code, in montage:
-<p align ="center"><img src ="assets/colmont.png"/></p><BR>
+<p align ="center"><img src ="assets/colmont.png" style="width: 250px"/></p><BR>
