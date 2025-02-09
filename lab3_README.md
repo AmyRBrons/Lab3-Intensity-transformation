@@ -64,7 +64,7 @@ Input
 imshow(f(:,241:482))
 ```
 Output
-<p align="centre"><img src ="assets/testYS.png" style="width: 250px"/></p><BR>
+<p align="center"><img src ="assets/testYS.png" style="width: 250px"/></p><BR>
 <BR><BR>
 
 ### Negative image
@@ -79,7 +79,7 @@ imshowpair(f, g1, 'montage')
 ```
 
 Output
-<p align="centre"><img src = "assets/task1.1.png" style="width: 250px"/></p><BR>
+<p align="center"><img src = "assets/task1.1.png" style="width: 250px"/></p><BR>
 <BR><BR>
 
 ### Gamma correction
