@@ -94,6 +94,12 @@ montage({g2,g3})
 
 Output
 <p align="center"> <img src="assets/gamma.png" style="width: 250px"/> </p><BR>
+<BR>
+Comments on Task 1:
+- The importance of contrast enhancement is evidenced in this task
+- When I checked the intensity range [21, 255], I realized the image actually contained a lot of information 
+- The negative image shows how inverting the intensities can sometimes make details pop out that were hard to see in the original.
+- The gamma correction experiments showcases how we can selectively enhance different parts of the intensity range. This would be super useful for images that are too dark or too bright in certain areas.
 <BR><BR>
 
 ## Task 2: Contrast-stretching transformation
@@ -117,6 +123,7 @@ Discuss the results with your classmates and record your observations in your lo
 - Main discussion was about utility for contast-lacking images, or where detail needs highlighted
 - Causes distortion of image slightly and noise on png
 - Causes some areas to be highlighted correctly, and others to be washed away
+
 <BR><BR>
 
 ## Task 3: Contrast Enhancement using Histogram
@@ -205,7 +212,10 @@ Output
 
 <p align = "center"><img src ="assets/hismont.png" style="width: 250px"/></p><BR>
 <p align = "center"><img src = "assets/hisimmont.png" style="width: 250px"/></p><BR>
-
+<BR>
+Task 3 Comments:
+- Working with histograms shows the actual distribution of pixel intensities, which helps understanding when images look flat or lack contrast.
+- Seeing the final equalized histogram really drove home how we can redistribute intensities to use the full range
 <BR><BR>
 
 ## Task 4 - Noise reduction with lowpass filter
@@ -462,3 +472,8 @@ montage({f, g, h, g_box})
 Output
 The four stages of this code, in montage:
 <p align ="center"><img src ="assets/colmont.png" style="width: 250px"/></p><BR>
+
+Task 7 Comments:
+- The lake and tree image I had to think carefully about which techniques to apply and in what order. Combining contrast stretching with gamma correction gave the best results.
+- The circle edge detection task showed me how combining filters (Sobel + Prewitt) can give better results than using just one.
+- The office photo challenge was best balancing contrast enhancement with noise reduction.
